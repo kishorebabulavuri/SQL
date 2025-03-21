@@ -1,0 +1,57 @@
+SQL CASE Statement: Conditional Logic in Queries
+The CASE statement is used to apply conditional logic within SQL queries. It works like an IF-ELSE statement in programming, allowing you to return different values based on conditions.
+
+1️⃣ Basic CASE Syntax
+
+CASE 
+    WHEN condition1 THEN result1
+    WHEN condition2 THEN result2
+    ELSE default_result
+END
+🔹 Used inside SELECT, UPDATE, ORDER BY, and more.
+
+2️⃣ Using CASE in SELECT
+
+SELECT name, age, 
+       CASE 
+           WHEN age < 25 THEN 'Young'
+           WHEN age BETWEEN 25 AND 40 THEN 'Mid-Age'
+           ELSE 'Senior'
+       END AS age_category
+FROM employees;
+🔹 Categorizes employees as Young, Mid-Age, or Senior.
+
+3️⃣ Using CASE in UPDATE
+
+UPDATE employees 
+SET salary = 
+    CASE 
+        WHEN department = 'HR' THEN 50000
+        WHEN department = 'IT' THEN 80000
+        ELSE salary 
+    END;
+🔹 Updates HR salaries to 50,000 and IT salaries to 80,000.
+
+4️⃣ Using CASE in ORDER BY
+
+SELECT * FROM employees
+ORDER BY 
+    CASE 
+        WHEN department = 'IT' THEN 1
+        WHEN department = 'HR' THEN 2
+        ELSE 3
+    END;
+🔹 Sorts IT first, then HR, then others.
+
+5️⃣ Using CASE with Aggregations
+
+SELECT department, 
+       SUM(CASE WHEN age < 30 THEN salary ELSE 0 END) AS young_employee_salary
+FROM employees
+GROUP BY department;
+🔹 Calculates total salary of employees under 30 for each department.
+
+🔹 Key Points
+✔ CASE can be used in SELECT, UPDATE, ORDER BY, and GROUP BY.
+✔ ELSE is optional (if omitted, NULL is returned when no conditions match).
+✔ Works like IF-ELSE logic.

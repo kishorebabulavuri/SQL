@@ -1,0 +1,15 @@
+SQL SELECT Fundamentals
+The SELECT statement is the most essential SQL command used to retrieve data from a database. It allows you to fetch specific columns, apply filters, sort results, and perform various operations.
+
+1️⃣ Basic SELECT Statement
+
+SELECT column1, column2 FROM table_name;
+
+🔹 Example: Retrieve name and age from the employees table.
+SELECT name, age FROM employees;
+
+2️⃣ SELECT * – Retrieve All Columns
+
+SELECT * FROM employees;
+
+🔹 Retrieves all columns from the employees table.

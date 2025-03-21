@@ -1,0 +1,78 @@
+SQL INSERT Statement: Adding Data to Tables
+The INSERT statement is used to add new rows to a table. There are two main ways to use INSERT:
+
+1️⃣ Basic INSERT INTO Syntax (All Columns)
+
+INSERT INTO table_name VALUES (value1, value2, value3, ...);
+🔹 Example: Inserting a new employee into the employees table.
+
+INSERT INTO employees VALUES (101, 'Alice', 28, 'HR', 50000);
+📌 Note: You must provide values for all columns in the table.
+
+2️⃣ INSERT INTO with Specific Columns
+
+INSERT INTO table_name (column1, column2, column3) VALUES (value1, value2, value3);
+🔹 Example: Inserting only name and department into employees.
+
+
+INSERT INTO employees (name, department) VALUES ('Bob', 'IT');
+📌 This is useful when you don't want to insert values for all columns.
+
+3️⃣ Inserting Multiple Rows at Once
+
+INSERT INTO employees (id, name, age, department, salary) 
+VALUES 
+(102, 'Charlie', 30, 'Finance', 60000),
+(103, 'David', 25, 'Marketing', 55000),
+(104, 'Emma', 35, 'IT', 70000);
+🔹 Inserts three employees at once.
+
+4️⃣ Using DEFAULT Values
+If a column has a default value, you can skip it:
+
+INSERT INTO employees (name, age, department) 
+VALUES ('Sophia', 29, DEFAULT);
+📌 If department has a default value ('General'), it will be used.
+
+==============================================================================================================
+
+Using DEFAULT Values in INSERT Statement
+The DEFAULT keyword is used in SQL INSERT statements when you want a column to use its predefined default value instead of manually inserting a value.
+
+1️⃣ Basic INSERT Using DEFAULT
+
+INSERT INTO table_name (column1, column2, column3) 
+VALUES (value1, DEFAULT, value3);
+🔹 The DEFAULT keyword allows the column to take its predefined value.
+
+2️⃣ Example Table: employees
+
+CREATE TABLE employees (
+    id INT PRIMARY KEY,
+    name VARCHAR(50),
+    age INT DEFAULT 25,
+    department VARCHAR(50) DEFAULT 'General',
+    salary DECIMAL(10,2) DEFAULT 40000
+);
+📌 Defaults:
+
+age → 25
+department → 'General'
+salary → 40000
+3️⃣ Inserting Data with DEFAULT
+
+INSERT INTO employees (id, name, department) 
+VALUES (101, 'Alice', DEFAULT);
+🔹 Since department has a default ('General'), it will be inserted as 'General'.
+
+4️⃣ Using DEFAULT for Multiple Columns
+
+INSERT INTO employees (id, name, age, department, salary)
+VALUES (102, 'Bob', DEFAULT, DEFAULT, 55000);
+🔹 age = 25, department = 'General', salary = 55000.
+
+5️⃣ Inserting Only DEFAULT Values
+
+INSERT INTO employees DEFAULT VALUES;
+🔹 Inserts a new row with all default values.
+

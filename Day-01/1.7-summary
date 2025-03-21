@@ -1,0 +1,5 @@
+Command	            Purpose	
+SELECT	            Retrieve data	
+INSERT	            Add new records	
+UPDATE	            Modify existing data	
+DELETE	            Remove data

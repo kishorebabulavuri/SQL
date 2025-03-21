@@ -1,1 +1,160 @@
-Day 1
+https://www.geeksforgeeks.org/30-days-of-sql-from-basic-to-advanced-level/
+
+What is a Database?
+A database is an organized collection of data that allows easy access, retrieval, and management. Databases store data in a structured way so that it can be efficiently queried and updated.
+
+Types of Databases
+
+Relational Databases (SQL-based) – Data is stored in tables (rows and columns) and follows a structured schema. Example: MySQL, PostgreSQL, SQL Server.
+
+NoSQL Databases – Designed for unstructured or semi-structured data (JSON, key-value pairs, documents). Example: MongoDB, Firebase, Cassandra.
+
+In-Memory Databases – Fast storage used for caching. Example: Redis.
+
+Graph Databases – Store relationships efficiently. Example: Neo4j.
+
+Key Database Concepts
+
+Tables – Collections of related data (used in relational databases).
+Rows (Records) – Individual entries in a table.
+Columns (Fields) – Attributes of data in a table.
+Primary Key – A unique identifier for each record.
+Foreign Key – A field that links two tables.
+Indexes – Speed up data retrieval.
+
+
+SQL vs. NoSQL: Key Differences Explained
+
+
+Feature	                        SQL (Relational DB)	                                                    NoSQL (Non-Relational DB)
+Structure	                    Structured tables with rows & columns	                                Flexible schema (documents, key-value, graph, etc.)
+Schema	                        Fixed schema (predefined structure)	                                    Dynamic schema (schema-less or flexible structure)
+Scalability	                    Vertically scalable (increasing CPU, RAM)	                            Horizontally scalable (adding more servers)
+Data Integrity	                High data integrity with ACID compliance	                            Eventual consistency (some support ACID)
+Query Language	                Uses SQL (Structured Query Language)	                                Uses JSON, key-value pairs, or custom query languages
+Best For	                    Structured data, complex queries, transactions	                        Big data, real-time applications, flexible data models
+Examples	                    MySQL, PostgreSQL, SQL Server, Oracle	                                MongoDB, Firebase, Cassandra, Redis
+
+When to Use SQL?
+✅ When data consistency and integrity are critical (e.g., banking, finance).
+✅ When dealing with structured data and complex relationships.
+✅ When transactions require ACID (Atomicity, Consistency, Isolation, Durability).
+
+When to Use NoSQL?
+✅ When handling large amounts of unstructured or semi-structured data.
+✅ When working with real-time applications (e.g., social media, IoT).
+✅ When scalability is a priority (e.g., distributed systems, cloud-based apps).
+
+What Are Relational Databases?
+A Relational Database (RDB) is a type of database that stores data in tables with rows and columns. It organizes data based on relationships between different entities and ensures data integrity using keys and constraints.
+
+Key Features of Relational Databases
+✅ Tables – Data is stored in structured tables (like spreadsheets).
+✅ Rows & Columns – Each table consists of rows (records) and columns (fields).
+✅ Primary Key – A unique identifier for each record in a table.
+✅ Foreign Key – A reference to a primary key in another table, establishing relationships.
+✅ SQL Language – Uses SQL (Structured Query Language) for data operations.
+✅ ACID Compliance – Ensures Atomicity, Consistency, Isolation, Durability for reliable transactions.
+
+✅ Benefits of RDBMS
+
+Structured Data – Data is organized in tables, making retrieval and manipulation efficient.
+ACID Compliance – Ensures Atomicity, Consistency, Isolation, Durability for reliable transactions.
+Normalization – Reduces redundancy and maintains data integrity.
+Scalability – Supports vertical scaling (adding more resources to a single machine).
+Data Integrity – Constraints like PRIMARY KEY, FOREIGN KEY, UNIQUE, and NOT NULL maintain accuracy.
+Security – Provides authentication, access control, and encryption.
+
+❌ Limitations of RDBMS
+
+Complexity – Requires expertise for setup, management, and optimization.
+Cost – Licensing and infrastructure costs can be high for enterprise solutions.
+Fixed Schema – Schema changes can be time-consuming and may require downtime.
+Unstructured Data Handling – Not ideal for JSON, images, videos, and real-time data.
+Horizontal Scalability – Scaling across multiple servers is harder than in NoSQL.
+
+🚀 When to Choose RDBMS?
+
+When data consistency and integrity are critical (e.g., Banking, Finance, Healthcare).
+When dealing with structured data that fits well into tables.
+When you need SQL for complex queries and reporting.
+
+🚀 When to Consider NoSQL?
+
+When dealing with large volumes of unstructured or semi-structured data.
+When scalability and performance under heavy read/write loads are priorities.
+When handling real-time applications (social media, IoT, analytics).
+
+SQL keywords :
+
+SQL keywords are reserved words that have special meanings within SQL statements. 
+These include commands (like SELECT, INSERT, UPDATE), clauses (such as WHERE, GROUP BY, HAVING), and other syntax elements that form the structure of SQL queries.
+Understanding SQL keywords is fundamental to writing correct and effective database queries.
+Keywords are typically case-insensitive but are often written in uppercase by convention for better readability.
+
+SQL Data Types :
+
+SQL data types define the kind of data a column can store. They vary slightly between different databases (MySQL, PostgreSQL, SQL Server, Oracle), but the core types remain the same.
+
+1️⃣ Numeric Data Types
+Used for storing numbers, including integers and decimals.
+
+Data Type	                Description	                            Example
+INT / INTEGER	            Whole numbers (no decimals).	        10, 500, -42
+SMALLINT	                Smaller range of integers.	            32000, -5000
+BIGINT	                    Large range of integers.	            9223372036854775807
+DECIMAL(p,s) / NUMERIC(p,s)	Fixed precision decimal numbers.	    123.45
+FLOAT / REAL	            Approximate floating-point numbers. 	3.14159, -0.99
+BIT	                        Stores 0 or 1 (Boolean values).	        0, 1
+
+
+
+2️⃣ String (Character) Data Types
+Used for storing text.
+
+Data Type	        Description	                                                                    Example
+CHAR(n)	            Fixed-length string (padded if shorter).	                                    'SQL '
+VARCHAR(n)	        Variable-length string (better for dynamic text).	                            'Hello World'
+TEXT	            Stores large text data.	                                                        Long paragraphs
+🔹 Example: CHAR(10) always stores 10 characters (padded with spaces if shorter), while VARCHAR(10) stores only the needed characters.
+
+3️⃣ Date & Time Data Types
+Used for storing dates and times.
+
+Data Type	                Description	                        Example
+DATE	                    Stores a date (YYYY-MM-DD).	        '2025-03-21'
+TIME	                    Stores time (HH:MI:SS).	            '12:30:45'
+DATETIME	                Stores both date & time.	        '2025-03-21 14:00:00'
+TIMESTAMP	                Stores date & time with time zone.	'2025-03-21 14:00:00 UTC'
+
+4️⃣ Boolean Data Type
+Used for storing TRUE or FALSE values.
+
+Data Type	            Description	                                            Example
+BOOLEAN	                Stores TRUE or FALSE (some DBs use BIT).	            TRUE, FALSE
+
+
+5️⃣ Binary Data Types
+Used for storing binary data such as images, files, and encrypted data.
+
+Data Type	                Description	                                                Example
+BLOB	                    Binary Large Object (stores images, files, etc.).	        Binary Data
+
+
+6️⃣ Special Data Types
+Used for unique cases.
+
+Data Type	                            Description	                                Example
+JSON	                                Stores JSON data (MySQL, PostgreSQL).	    '{"name": "John"}'
+XML	Stores XML data.	<user>John</user>
+
+
+🔹 Example: Creating a Table with Data Types
+
+CREATE TABLE employees (
+    id INT PRIMARY KEY,
+    name VARCHAR(50),
+    salary DECIMAL(10,2),
+    birthdate DATE,
+    is_active BOOLEAN
+);

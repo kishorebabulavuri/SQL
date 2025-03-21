@@ -1,0 +1,60 @@
+SQL UPDATE Statement: Modifying Existing Records
+The UPDATE statement is used to modify existing records in a table. It allows updating one or multiple columns based on a specified condition.
+
+1️⃣ Basic UPDATE Syntax
+
+UPDATE table_name 
+SET column1 = value1, column2 = value2 
+WHERE condition;
+🔹 Example: Update Alice's salary to 60000.
+
+UPDATE employees 
+SET salary = 60000 
+WHERE name = 'Alice';
+✅ Always use WHERE to avoid updating all rows.
+
+2️⃣ Updating Multiple Columns
+
+UPDATE employees 
+SET salary = 70000, department = 'IT' 
+WHERE id = 102;
+🔹 Updates both salary and department for employee with ID 102.
+
+3️⃣ Updating All Rows (UPDATE Without WHERE)
+
+UPDATE employees 
+SET department = 'General';
+🔹 Changes every employee’s department to 'General' (⚠️ Use carefully).
+
+4️⃣ Using UPDATE with CASE (Conditional Updates)
+
+----> reference (CASE)
+
+UPDATE employees 
+SET salary = 
+    CASE 
+        WHEN department = 'HR' THEN 50000
+        WHEN department = 'IT' THEN 80000
+        ELSE salary 
+    END;
+🔹 Updates HR employees to 50000 and IT employees to 80000.
+
+5️⃣ Updating Using a Subquery
+
+UPDATE employees 
+SET salary = (SELECT AVG(salary) FROM employees)
+WHERE department = 'Finance';
+🔹 Sets Finance employees' salary to the average salary of all employees.
+
+6️⃣ Updating Data Using JOIN
+
+UPDATE employees 
+INNER JOIN departments ON employees.department_id = departments.id
+SET employees.salary = 75000
+WHERE departments.department_name = 'Sales';
+🔹 Increases salaries for all Sales employees.
+
+⚠️ Important Notes:
+Always use WHERE unless you intend to update all records.
+UPDATE can be rolled back if inside a transaction.
+UPDATE does not reset auto-increment values.

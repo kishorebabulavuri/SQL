@@ -1,0 +1,60 @@
+Operators :
+SQL Operators: Explained
+SQL operators are used in queries to perform operations on data. They are categorized into different types based on their functionality.
+
+1️⃣ Arithmetic Operators
+Used for performing mathematical calculations.
+
+Operator	            Description	                Example
++	Addition	        SELECT 10 + 5;              → 15
+-	Subtraction	        SELECT 10 - 5;              → 5
+*	Multiplication	    SELECT 10 * 5;              → 50
+/	Division	        SELECT 10 / 5;              → 2
+%	Modulus (Remainder)	SELECT 10 % 3;               → 1
+
+
+2️⃣ Comparison Operators
+Used for comparing values in WHERE conditions.
+
+Operator	                Description	                                Example
+=	                        Equal to	                                SELECT * FROM employees WHERE age = 30;
+!= or <>	                Not equal to	                            SELECT * FROM employees WHERE age <> 30;
+>	                        Greater than	                            SELECT * FROM employees WHERE salary > 50000;
+<	                        Less than	                                SELECT * FROM employees WHERE age < 25;
+>=	                        Greater than or equal to	                SELECT * FROM employees WHERE age >= 40;
+<=	                        Less than or equal to	                    SELECT * FROM employees WHERE age <= 50;
+
+
+3️⃣ Logical Operators
+Used to combine multiple conditions in a WHERE clause.
+
+Operator	                        Description	                                Example
+AND	                                Both conditions must be true	            SELECT * FROM employees WHERE age > 25 AND salary > 50000;
+OR	                                At least one condition must be true	        SELECT * FROM employees WHERE age < 25 OR salary > 50000;
+NOT	                                Negates a condition	                        SELECT * FROM employees WHERE NOT age = 30;
+
+
+4️⃣ Bitwise Operators
+Used to perform bit-level operations (mostly in SQL Server & MySQL).
+
+Operator	                        Description	                                Example
+&	                                Bitwise AND	SELECT 5 & 3;                    → 1
+`	                                `	                                         Bitwise OR
+^	                                Bitwise XOR	SELECT 5 ^ 3;                    → 6
+~	                                Bitwise NOT	SELECT                           ~5;
+
+
+5️⃣ Special Operators
+Used for filtering data in queries.
+
+Operator	                        Description	                                    Example
+BETWEEN	                            Checks if a value is within a range         	SELECT * FROM employees WHERE age BETWEEN 25 AND 40;
+IN	                                Checks if a value is in a given list	        SELECT * FROM employees WHERE age IN (25, 30, 35);
+LIKE	                            Pattern matching using wildcards (% and _)	    SELECT * FROM employees WHERE name LIKE 'A%'; (Names starting with A)
+IS NULL	                            Checks if a value is NULL	                    SELECT * FROM employees WHERE salary IS NULL;
+
+
+6️⃣ Wildcards (Used with LIKE)
+Wildcard	                        Description	                                    Example
+%	                                Matches zero or more characters	                LIKE 'A%' (Names starting with 'A')
+_	                                Matches exactly one character	                LIKE '_a%' (Second letter is 'a')
