@@ -1,0 +1,69 @@
+### 📈 SQL Learning Notes (Today's Summary)
+
+---
+
+## ✅ What You Learned Today
+
+### **1️⃣ Basic SQL Commands**
+- **`CREATE DATABASE db_name;`** → Creates a new database  
+- **`SHOW DATABASES;`** → Lists all databases  
+- **`USE db_name;`** → Switches to a specific database  
+
+### **2️⃣ Working with Tables**
+- **`CREATE TABLE table_name (...);`** → Creates a new table  
+- **`DESC table_name;`** → Shows table structure (columns & data types)  
+- **`SHOW TABLES;`** → Lists all tables in the database  
+
+### **3️⃣ Data Manipulation (CRUD Operations)**
+- **`SELECT * FROM table_name;`** → Retrieves all data  
+- **`INSERT INTO table_name VALUES (...);`** → Inserts data  
+- **`UPDATE table_name SET column = value WHERE condition;`** → Updates data  
+- **`DELETE FROM table_name WHERE condition;`** → Deletes specific records  
+
+### **4️⃣ Query Filtering & Restrictions**
+- **`SELECT column FROM table_name WHERE condition;`** → Fetches specific columns  
+- **`LIMIT number;`** → Restricts the number of results  
+- **`ORDER BY column ASC/DESC;`** → Sorts results  
+
+### **5️⃣ Table Modification (`ALTER TABLE`)**
+- **Renaming a column**  
+  ```sql
+  ALTER TABLE students RENAME COLUMN name TO names;
+  ```
+- **Modifying a column (adding NOT NULL & DEFAULT)**  
+  ```sql
+  ALTER TABLE students MODIFY COLUMN age INT NOT NULL DEFAULT 18;
+  ```
+
+### **6️⃣ Checking Query Execution & Logs**
+- **View running queries** → `SHOW PROCESSLIST;`  
+- **Kill a running query** → `KILL QUERY query_id;`  
+- **Check today's queries (Workbench)** → `"Query → Show Query History"`  
+
+---
+
+## ✅ Do’s & Don’ts  
+
+### ✅ **Do’s**  
+✔️ Always **use `WHERE`** in `UPDATE` & `DELETE` to avoid affecting all records.  
+✔️ Use **`DESC table_name;`** before inserting to check the structure.  
+✔️ Always **back up data** before making major changes.  
+✔️ Use **primary keys** to uniquely identify records.  
+✔️ Check query execution using **logs (`SHOW PROCESSLIST;`)**.  
+
+### ❌ **Don'ts**  
+⛔ Never run `DELETE FROM table_name;` without a **`WHERE` clause**.  
+⛔ Avoid `UPDATE` without specifying a condition → It will change all rows.  
+⛔ Don't forget to **set a default value (`DEFAULT`)** for required fields.  
+⛔ Don't use `SELECT *` in production → Always specify columns.  
+⛔ Avoid modifying table structure frequently in live databases.  
+
+---
+
+### 🚀 Next Steps  
+📅 **Next Topic:** `ALTER TABLE` (Renaming, Adding, Dropping Columns)  
+💼 Keep practicing **INSERT, UPDATE, DELETE, and SELECT**  
+📝 Try complex queries with **filters, sorting, and conditions**  
+
+🔥 Keep going, Kishore! You're making solid progress! 🚀😊
+
